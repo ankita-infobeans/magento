@@ -1,0 +1,31 @@
+<layout version="0.1.0">
+    <customer_account>
+        <reference name="customer_account_navigation">
+			<action method="addLink" translate="label" module="chasepaymentech"><name>mycreditcards</name><path>chasepaymentech/account/cards</path><label>My Credit Cards</label></action>
+        </reference>
+    </customer_account>
+
+    <chasepaymentech_account_cards translate="label">
+        <label>Customer My Account Stored Cards</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+			<block type="chasepaymentech/account_cards" name="cards" template="chasepaymentech/account/cards.phtml" />
+        </reference>
+    </chasepaymentech_account_cards>
+
+    <chasepaymentech_account_add translate="label">
+        <label>Customer My Account Add Card</label>
+		<update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+           	<block type="chasepaymentech/account_cards_form" name="cards_form" template="chasepaymentech/account/cards/form.phtml" />
+        </reference>
+    </chasepaymentech_account_add>
+
+    <chasepaymentech_account_edit translate="label">
+        <label>Customer My Account Edit Card</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+           	<block type="chasepaymentech/account_cards_form" name="cards_form" template="chasepaymentech/account/cards/form.phtml" />
+        </reference>
+    </chasepaymentech_account_edit>
+</layout>

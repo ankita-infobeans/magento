@@ -1,0 +1,864 @@
+visa-	A-1		--------------- April 10, 2012, 10:12 am EST ----------------------------
+--------------Request -----------------
+Gorilla_Paymentech_Model_Source_NewOrder Object
+(
+    [newOrderRequest] => Gorilla_Paymentech_Model_Source_NewOrderRequestElement Object
+        (
+            [ccAccountNum] => 4788250000028291
+            [ccExp] => 201212
+            [ccCardVerifyPresenceInd] => 1
+            [ccCardVerifyNum] => 111
+            [addProfileFromOrder] => 
+            [amount] => 3000
+            [shippingRef] => 
+            [orderID] => GQ4qVuJl
+            [comments] => 
+            [avsZip] => L6L2X9
+            [avsAddress1] => 555 MockingBird Ln.
+            [avsAddress2] => 
+            [avsCity] => Chicago
+            [avsState] => 
+            [avsName] => Testy Testerson
+            [avsCountryCode] => CA
+            [avsPhone] => 5555555555
+            [txRefNum] => 
+            [transType] => AC
+            [cardBrand] => 
+            [customerRefNum] => 
+            [profileOrderOverideInd] => 
+            [useCustomerRefNum] => 
+            [orbitalConnectionUsername] => COUCODEINT1208
+            [orbitalConnectionPassword] => NJ9Y9YTZRW4TGP
+            [version] => 2.6
+            [merchantID] => 700000004575
+            [bin] => 000002
+            [industryType] => EC
+            [terminalID] => 001
+            [error] => 
+            [customerName] => Testy Testerson
+        )
+
+)
+---------------------------------------
+--------------Response -----------------
+Gorilla_Paymentech_Model_Source_NewOrderResponseElement Object
+(
+    [procStatus] => 0
+    [approvalStatus] => 1
+    [respCode] => 00
+    [authorizationCode] => 094906
+    [procStatusMessage] => Approved
+    [hostRespCode] => 00
+    [hostAVSRespCode] => Y
+    [hostCVVRespCode] => M
+    [retryTrace] => 
+    [retryAttempCount] => 
+    [lastRetryDate] => 
+    [customerName] => 
+    [profileProcStatus] => 
+    [profileProcStatusMsg] => 
+    [requestedAmount] => 
+    [redeemedAmount] => 
+    [ccAccountNum] => 
+    [ccExp] => 
+    [ccCardVerifyPresenceInd] => 
+    [ccCardVerifyNum] => 
+    [addProfileFromOrder] => 
+    [amount] => 
+    [shippingRef] => 
+    [orderID] => GQ4qVuJl
+    [comments] => 
+    [avsZip] => 
+    [avsAddress1] => 
+    [avsAddress2] => 
+    [avsCity] => 
+    [avsState] => 
+    [avsName] => 
+    [avsCountryCode] => 
+    [avsPhone] => 
+    [txRefNum] => 4F843FC1424CC50D588A336C8EF745505C5354D1
+    [transType] => AC
+    [cardBrand] => VI
+    [customerRefNum] => 
+    [profileOrderOverideInd] => 
+    [useCustomerRefNum] => 
+    [orbitalConnectionUsername] => 
+    [orbitalConnectionPassword] => 
+    [version] => 
+    [merchantID] => 700000004575
+    [bin] => 000002
+    [industryType] => EC
+    [terminalID] => 001
+    [error] => 
+    [txRefIdx] => 1
+    [respDateTime] => 20120410101217
+    [avsRespCode] => H 
+    [cvvRespCode] => M
+    [mcRecurringAdvCode] => 
+    [visaVbVRespCode] => 
+    [respCodeMessage] => 
+)
+-----------------------------------------
+
+
+
+
+
+
+
+visa-	A-2		--------------- April 10, 2012, 10:12 am EST ----------------------------
+--------------Request -----------------
+Gorilla_Paymentech_Model_Source_NewOrder Object
+(
+    [newOrderRequest] => Gorilla_Paymentech_Model_Source_NewOrderRequestElement Object
+        (
+            [ccAccountNum] => 4788250000028291
+            [ccExp] => 201212
+            [ccCardVerifyPresenceInd] => 
+            [ccCardVerifyNum] => 
+            [addProfileFromOrder] => 
+            [amount] => 3801
+            [shippingRef] => 
+            [orderID] => JxQWunYa
+            [comments] => 
+            [avsZip] => 33333
+            [avsAddress1] => 555 MockingBird Ln.
+            [avsAddress2] => 
+            [avsCity] => Chicago
+            [avsState] => 
+            [avsName] => Testy Testerson
+            [avsCountryCode] => US
+            [avsPhone] => 5555555555
+            [txRefNum] => 
+            [transType] => AC
+            [cardBrand] => 
+            [customerRefNum] => 
+            [profileOrderOverideInd] => 
+            [useCustomerRefNum] => 
+            [orbitalConnectionUsername] => COUCODEINT1208
+            [orbitalConnectionPassword] => NJ9Y9YTZRW4TGP
+            [version] => 2.6
+            [merchantID] => 700000004575
+            [bin] => 000002
+            [industryType] => EC
+            [terminalID] => 001
+            [error] => 
+            [customerName] => Testy Testerson
+        )
+
+)
+---------------------------------------
+--------------Response -----------------
+Gorilla_Paymentech_Model_Source_NewOrderResponseElement Object
+(
+    [procStatus] => 0
+    [approvalStatus] => 0
+    [respCode] => 05
+    [authorizationCode] => 
+    [procStatusMessage] => Do Not Honor
+    [hostRespCode] => 05
+    [hostAVSRespCode] => N
+    [hostCVVRespCode] => 
+    [retryTrace] => 
+    [retryAttempCount] => 
+    [lastRetryDate] => 
+    [customerName] => 
+    [profileProcStatus] => 
+    [profileProcStatusMsg] => 
+    [requestedAmount] => 
+    [redeemedAmount] => 
+    [ccAccountNum] => 
+    [ccExp] => 
+    [ccCardVerifyPresenceInd] => 
+    [ccCardVerifyNum] => 
+    [addProfileFromOrder] => 
+    [amount] => 
+    [shippingRef] => 
+    [orderID] => JxQWunYa
+    [comments] => 
+    [avsZip] => 
+    [avsAddress1] => 
+    [avsAddress2] => 
+    [avsCity] => 
+    [avsState] => 
+    [avsName] => 
+    [avsCountryCode] => 
+    [avsPhone] => 
+    [txRefNum] => 4F843FC1530EA3B82879446BD092A89C819554EF
+    [transType] => AC
+    [cardBrand] => VI
+    [customerRefNum] => 
+    [profileOrderOverideInd] => 
+    [useCustomerRefNum] => 
+    [orbitalConnectionUsername] => 
+    [orbitalConnectionPassword] => 
+    [version] => 
+    [merchantID] => 700000004575
+    [bin] => 000002
+    [industryType] => EC
+    [terminalID] => 001
+    [error] => 
+    [txRefIdx] => 0
+    [respDateTime] => 20120410101217
+    [avsRespCode] => G 
+    [cvvRespCode] =>  
+    [mcRecurringAdvCode] => 
+    [visaVbVRespCode] => 
+    [respCodeMessage] => AUTH DECLINED                   12001
+)
+-----------------------------------------
+
+
+
+
+
+
+
+-	A-7		--------------- April 10, 2012, 10:12 am EST ----------------------------
+--------------Request -----------------
+Gorilla_Paymentech_Model_Source_NewOrder Object
+(
+    [newOrderRequest] => Gorilla_Paymentech_Model_Source_NewOrderRequestElement Object
+        (
+            [ccAccountNum] => 5454545454545454
+            [ccExp] => 201212
+            [ccCardVerifyPresenceInd] => 
+            [ccCardVerifyNum] => 
+            [addProfileFromOrder] => 
+            [amount] => 4100
+            [shippingRef] => 
+            [orderID] => ljuanJSI
+            [comments] => 
+            [avsZip] => 44444
+            [avsAddress1] => 555 MockingBird Ln.
+            [avsAddress2] => 
+            [avsCity] => Chicago
+            [avsState] => 
+            [avsName] => Testy Testerson
+            [avsCountryCode] => US
+            [avsPhone] => 5555555555
+            [txRefNum] => 
+            [transType] => AC
+            [cardBrand] => 
+            [customerRefNum] => 
+            [profileOrderOverideInd] => 
+            [useCustomerRefNum] => 
+            [orbitalConnectionUsername] => COUCODEINT1208
+            [orbitalConnectionPassword] => NJ9Y9YTZRW4TGP
+            [version] => 2.6
+            [merchantID] => 700000004575
+            [bin] => 000002
+            [industryType] => EC
+            [terminalID] => 001
+            [error] => 
+            [customerName] => Testy Testerson
+        )
+
+)
+---------------------------------------
+--------------Response -----------------
+Gorilla_Paymentech_Model_Source_NewOrderResponseElement Object
+(
+    [procStatus] => 0
+    [approvalStatus] => 1
+    [respCode] => 00
+    [authorizationCode] => 194908
+    [procStatusMessage] => Approved
+    [hostRespCode] => 00
+    [hostAVSRespCode] => R
+    [hostCVVRespCode] => 
+    [retryTrace] => 
+    [retryAttempCount] => 
+    [lastRetryDate] => 
+    [customerName] => 
+    [profileProcStatus] => 
+    [profileProcStatusMsg] => 
+    [requestedAmount] => 
+    [redeemedAmount] => 
+    [ccAccountNum] => 
+    [ccExp] => 
+    [ccCardVerifyPresenceInd] => 
+    [ccCardVerifyNum] => 
+    [addProfileFromOrder] => 
+    [amount] => 
+    [shippingRef] => 
+    [orderID] => ljuanJSI
+    [comments] => 
+    [avsZip] => 
+    [avsAddress1] => 
+    [avsAddress2] => 
+    [avsCity] => 
+    [avsState] => 
+    [avsName] => 
+    [avsCountryCode] => 
+    [avsPhone] => 
+    [txRefNum] => 4F843FC2C6A1C9CE4B1F43B7700BDC947BCF54BF
+    [transType] => AC
+    [cardBrand] => MC
+    [customerRefNum] => 
+    [profileOrderOverideInd] => 
+    [useCustomerRefNum] => 
+    [orbitalConnectionUsername] => 
+    [orbitalConnectionPassword] => 
+    [version] => 
+    [merchantID] => 700000004575
+    [bin] => 000002
+    [industryType] => EC
+    [terminalID] => 001
+    [error] => 
+    [txRefIdx] => 1
+    [respDateTime] => 20120410101218
+    [avsRespCode] => 6 
+    [cvvRespCode] =>  
+    [mcRecurringAdvCode] => 
+    [visaVbVRespCode] => 
+    [respCodeMessage] => 
+)
+-----------------------------------------
+
+
+
+
+
+
+
+-	A-8		--------------- April 10, 2012, 10:12 am EST ----------------------------
+--------------Request -----------------
+Gorilla_Paymentech_Model_Source_NewOrder Object
+(
+    [newOrderRequest] => Gorilla_Paymentech_Model_Source_NewOrderRequestElement Object
+        (
+            [ccAccountNum] => 5454545454545454
+            [ccExp] => 201212
+            [ccCardVerifyPresenceInd] => 
+            [ccCardVerifyNum] => 666
+            [addProfileFromOrder] => 
+            [amount] => 1102
+            [shippingRef] => 
+            [orderID] => 7NdMgyfY
+            [comments] => 
+            [avsZip] => L6L2X9
+            [avsAddress1] => 555 MockingBird Ln.
+            [avsAddress2] => 
+            [avsCity] => Chicago
+            [avsState] => 
+            [avsName] => Testy Testerson
+            [avsCountryCode] => CA
+            [avsPhone] => 5555555555
+            [txRefNum] => 
+            [transType] => AC
+            [cardBrand] => 
+            [customerRefNum] => 
+            [profileOrderOverideInd] => 
+            [useCustomerRefNum] => 
+            [orbitalConnectionUsername] => COUCODEINT1208
+            [orbitalConnectionPassword] => NJ9Y9YTZRW4TGP
+            [version] => 2.6
+            [merchantID] => 700000004575
+            [bin] => 000002
+            [industryType] => EC
+            [terminalID] => 001
+            [error] => 
+            [customerName] => Testy Testerson
+        )
+
+)
+---------------------------------------
+--------------Response -----------------
+Gorilla_Paymentech_Model_Source_NewOrderResponseElement Object
+(
+    [procStatus] => 0
+    [approvalStatus] => 0
+    [respCode] => 01
+    [authorizationCode] => 
+    [procStatusMessage] => Call Voice Center
+    [hostRespCode] => 01
+    [hostAVSRespCode] => A
+    [hostCVVRespCode] => 
+    [retryTrace] => 
+    [retryAttempCount] => 
+    [lastRetryDate] => 
+    [customerName] => 
+    [profileProcStatus] => 
+    [profileProcStatusMsg] => 
+    [requestedAmount] => 
+    [redeemedAmount] => 
+    [ccAccountNum] => 
+    [ccExp] => 
+    [ccCardVerifyPresenceInd] => 
+    [ccCardVerifyNum] => 
+    [addProfileFromOrder] => 
+    [amount] => 
+    [shippingRef] => 
+    [orderID] => 7NdMgyfY
+    [comments] => 
+    [avsZip] => 
+    [avsAddress1] => 
+    [avsAddress2] => 
+    [avsCity] => 
+    [avsState] => 
+    [avsName] => 
+    [avsCountryCode] => 
+    [avsPhone] => 
+    [txRefNum] => 4F843FC3D6D5D44682999EBF8B277E87FA305447
+    [transType] => AC
+    [cardBrand] => MC
+    [customerRefNum] => 
+    [profileOrderOverideInd] => 
+    [useCustomerRefNum] => 
+    [orbitalConnectionUsername] => 
+    [orbitalConnectionPassword] => 
+    [version] => 
+    [merchantID] => 700000004575
+    [bin] => 000002
+    [industryType] => EC
+    [terminalID] => 001
+    [error] => 
+    [txRefIdx] => 0
+    [respDateTime] => 20120410101219
+    [avsRespCode] => F 
+    [cvvRespCode] =>  
+    [mcRecurringAdvCode] => 
+    [visaVbVRespCode] => 
+    [respCodeMessage] => CALL VOICE OPER                 09002
+)
+-----------------------------------------
+
+
+
+
+
+
+
+-	A-13		--------------- April 10, 2012, 10:12 am EST ----------------------------
+--------------Request -----------------
+Gorilla_Paymentech_Model_Source_NewOrder Object
+(
+    [newOrderRequest] => Gorilla_Paymentech_Model_Source_NewOrderRequestElement Object
+        (
+            [ccAccountNum] => 371449635398431
+            [ccExp] => 201212
+            [ccCardVerifyPresenceInd] => 
+            [ccCardVerifyNum] => 111
+            [addProfileFromOrder] => 
+            [amount] => 105500
+            [shippingRef] => 
+            [orderID] => Dt6FfJEp
+            [comments] => 
+            [avsZip] => L6L2X9
+            [avsAddress1] => 555 MockingBird Ln.
+            [avsAddress2] => 
+            [avsCity] => Chicago
+            [avsState] => 
+            [avsName] => Testy Testerson
+            [avsCountryCode] => CA
+            [avsPhone] => 5555555555
+            [txRefNum] => 
+            [transType] => AC
+            [cardBrand] => 
+            [customerRefNum] => 
+            [profileOrderOverideInd] => 
+            [useCustomerRefNum] => 
+            [orbitalConnectionUsername] => COUCODEINT1208
+            [orbitalConnectionPassword] => NJ9Y9YTZRW4TGP
+            [version] => 2.6
+            [merchantID] => 700000004575
+            [bin] => 000002
+            [industryType] => EC
+            [terminalID] => 001
+            [error] => 
+            [customerName] => Testy Testerson
+        )
+
+)
+---------------------------------------
+--------------Response -----------------
+Gorilla_Paymentech_Model_Source_NewOrderResponseElement Object
+(
+    [procStatus] => 0
+    [approvalStatus] => 1
+    [respCode] => 00
+    [authorizationCode] => 094911
+    [procStatusMessage] => Approved
+    [hostRespCode] => 00
+    [hostAVSRespCode] => A
+    [hostCVVRespCode] => N
+    [retryTrace] => 
+    [retryAttempCount] => 
+    [lastRetryDate] => 
+    [customerName] => 
+    [profileProcStatus] => 
+    [profileProcStatusMsg] => 
+    [requestedAmount] => 
+    [redeemedAmount] => 
+    [ccAccountNum] => 
+    [ccExp] => 
+    [ccCardVerifyPresenceInd] => 
+    [ccCardVerifyNum] => 
+    [addProfileFromOrder] => 
+    [amount] => 
+    [shippingRef] => 
+    [orderID] => Dt6FfJEp
+    [comments] => 
+    [avsZip] => 
+    [avsAddress1] => 
+    [avsAddress2] => 
+    [avsCity] => 
+    [avsState] => 
+    [avsName] => 
+    [avsCountryCode] => 
+    [avsPhone] => 
+    [txRefNum] => 4F843FC3F48A55AD7094BE7050A71C1B44385485
+    [transType] => AC
+    [cardBrand] => AX
+    [customerRefNum] => 
+    [profileOrderOverideInd] => 
+    [useCustomerRefNum] => 
+    [orbitalConnectionUsername] => 
+    [orbitalConnectionPassword] => 
+    [version] => 
+    [merchantID] => 700000004575
+    [bin] => 000002
+    [industryType] => EC
+    [terminalID] => 001
+    [error] => 
+    [txRefIdx] => 1
+    [respDateTime] => 20120410101219
+    [avsRespCode] => F 
+    [cvvRespCode] => N
+    [mcRecurringAdvCode] => 
+    [visaVbVRespCode] => 
+    [respCodeMessage] => 
+)
+-----------------------------------------
+
+
+
+
+
+
+
+-	A-14		--------------- April 10, 2012, 10:12 am EST ----------------------------
+--------------Request -----------------
+Gorilla_Paymentech_Model_Source_NewOrder Object
+(
+    [newOrderRequest] => Gorilla_Paymentech_Model_Source_NewOrderRequestElement Object
+        (
+            [ccAccountNum] => 371449635398431
+            [ccExp] => 201212
+            [ccCardVerifyPresenceInd] => 
+            [ccCardVerifyNum] => 2222
+            [addProfileFromOrder] => 
+            [amount] => 7500
+            [shippingRef] => 
+            [orderID] => YFWJGfVv
+            [comments] => 
+            [avsZip] => 66666
+            [avsAddress1] => 555 MockingBird Ln.
+            [avsAddress2] => 
+            [avsCity] => Chicago
+            [avsState] => 
+            [avsName] => Testy Testerson
+            [avsCountryCode] => US
+            [avsPhone] => 5555555555
+            [txRefNum] => 
+            [transType] => AC
+            [cardBrand] => 
+            [customerRefNum] => 
+            [profileOrderOverideInd] => 
+            [useCustomerRefNum] => 
+            [orbitalConnectionUsername] => COUCODEINT1208
+            [orbitalConnectionPassword] => NJ9Y9YTZRW4TGP
+            [version] => 2.6
+            [merchantID] => 700000004575
+            [bin] => 000002
+            [industryType] => EC
+            [terminalID] => 001
+            [error] => 
+            [customerName] => Testy Testerson
+        )
+
+)
+---------------------------------------
+--------------Response -----------------
+Gorilla_Paymentech_Model_Source_NewOrderResponseElement Object
+(
+    [procStatus] => 0
+    [approvalStatus] => 1
+    [respCode] => 00
+    [authorizationCode] => 094912
+    [procStatusMessage] => Approved
+    [hostRespCode] => 00
+    [hostAVSRespCode] => Y
+    [hostCVVRespCode] => Y
+    [retryTrace] => 
+    [retryAttempCount] => 
+    [lastRetryDate] => 
+    [customerName] => 
+    [profileProcStatus] => 
+    [profileProcStatusMsg] => 
+    [requestedAmount] => 
+    [redeemedAmount] => 
+    [ccAccountNum] => 
+    [ccExp] => 
+    [ccCardVerifyPresenceInd] => 
+    [ccCardVerifyNum] => 
+    [addProfileFromOrder] => 
+    [amount] => 
+    [shippingRef] => 
+    [orderID] => YFWJGfVv
+    [comments] => 
+    [avsZip] => 
+    [avsAddress1] => 
+    [avsAddress2] => 
+    [avsCity] => 
+    [avsState] => 
+    [avsName] => 
+    [avsCountryCode] => 
+    [avsPhone] => 
+    [txRefNum] => 4F843FC3889416BC353C5A454AA8A78FA90354FB
+    [transType] => AC
+    [cardBrand] => AX
+    [customerRefNum] => 
+    [profileOrderOverideInd] => 
+    [useCustomerRefNum] => 
+    [orbitalConnectionUsername] => 
+    [orbitalConnectionPassword] => 
+    [version] => 
+    [merchantID] => 700000004575
+    [bin] => 000002
+    [industryType] => EC
+    [terminalID] => 001
+    [error] => 
+    [txRefIdx] => 1
+    [respDateTime] => 20120410101220
+    [avsRespCode] => H 
+    [cvvRespCode] => M
+    [mcRecurringAdvCode] => 
+    [visaVbVRespCode] => 
+    [respCodeMessage] => 
+)
+-----------------------------------------
+
+
+
+
+
+
+
+-	A-15		--------------- April 10, 2012, 10:12 am EST ----------------------------
+--------------Request -----------------
+Gorilla_Paymentech_Model_Source_NewOrder Object
+(
+    [newOrderRequest] => Gorilla_Paymentech_Model_Source_NewOrderRequestElement Object
+        (
+            [ccAccountNum] => 6011000995500000
+            [ccExp] => 201212
+            [ccCardVerifyPresenceInd] => 
+            [ccCardVerifyNum] => 
+            [addProfileFromOrder] => 
+            [amount] => 1000
+            [shippingRef] => 
+            [orderID] => TSpQ6kNm
+            [comments] => 
+            [avsZip] => 77777
+            [avsAddress1] => 555 MockingBird Ln.
+            [avsAddress2] => 
+            [avsCity] => Chicago
+            [avsState] => 
+            [avsName] => Testy Testerson
+            [avsCountryCode] => US
+            [avsPhone] => 5555555555
+            [txRefNum] => 
+            [transType] => AC
+            [cardBrand] => 
+            [customerRefNum] => 
+            [profileOrderOverideInd] => 
+            [useCustomerRefNum] => 
+            [orbitalConnectionUsername] => COUCODEINT1208
+            [orbitalConnectionPassword] => NJ9Y9YTZRW4TGP
+            [version] => 2.6
+            [merchantID] => 700000004575
+            [bin] => 000002
+            [industryType] => EC
+            [terminalID] => 001
+            [error] => 
+            [customerName] => Testy Testerson
+        )
+
+)
+---------------------------------------
+--------------Response -----------------
+Gorilla_Paymentech_Model_Source_NewOrderResponseElement Object
+(
+    [procStatus] => 0
+    [approvalStatus] => 1
+    [respCode] => 00
+    [authorizationCode] => 094913
+    [procStatusMessage] => Approved
+    [hostRespCode] => 00
+    [hostAVSRespCode] => Z
+    [hostCVVRespCode] => 
+    [retryTrace] => 
+    [retryAttempCount] => 
+    [lastRetryDate] => 
+    [customerName] => 
+    [profileProcStatus] => 
+    [profileProcStatusMsg] => 
+    [requestedAmount] => 
+    [redeemedAmount] => 
+    [ccAccountNum] => 
+    [ccExp] => 
+    [ccCardVerifyPresenceInd] => 
+    [ccCardVerifyNum] => 
+    [addProfileFromOrder] => 
+    [amount] => 
+    [shippingRef] => 
+    [orderID] => TSpQ6kNm
+    [comments] => 
+    [avsZip] => 
+    [avsAddress1] => 
+    [avsAddress2] => 
+    [avsCity] => 
+    [avsState] => 
+    [avsName] => 
+    [avsCountryCode] => 
+    [avsPhone] => 
+    [txRefNum] => 4F843FC44FD63285E939413898285AED93C95404
+    [transType] => AC
+    [cardBrand] => DI
+    [customerRefNum] => 
+    [profileOrderOverideInd] => 
+    [useCustomerRefNum] => 
+    [orbitalConnectionUsername] => 
+    [orbitalConnectionPassword] => 
+    [version] => 
+    [merchantID] => 700000004575
+    [bin] => 000002
+    [industryType] => EC
+    [terminalID] => 001
+    [error] => 
+    [txRefIdx] => 1
+    [respDateTime] => 20120410101220
+    [avsRespCode] => Z 
+    [cvvRespCode] =>  
+    [mcRecurringAdvCode] => 
+    [visaVbVRespCode] => 
+    [respCodeMessage] => 
+)
+-----------------------------------------
+
+
+
+
+
+
+
+-	A-16		--------------- April 10, 2012, 10:12 am EST ----------------------------
+--------------Request -----------------
+Gorilla_Paymentech_Model_Source_NewOrder Object
+(
+    [newOrderRequest] => Gorilla_Paymentech_Model_Source_NewOrderRequestElement Object
+        (
+            [ccAccountNum] => 6011000995500000
+            [ccExp] => 201212
+            [ccCardVerifyPresenceInd] => 1
+            [ccCardVerifyNum] => 444
+            [addProfileFromOrder] => 
+            [amount] => 6303
+            [shippingRef] => 
+            [orderID] => zWeT45FP
+            [comments] => 
+            [avsZip] => L6L2X9
+            [avsAddress1] => 555 MockingBird Ln.
+            [avsAddress2] => 
+            [avsCity] => Chicago
+            [avsState] => 
+            [avsName] => Testy Testerson
+            [avsCountryCode] => CA
+            [avsPhone] => 5555555555
+            [txRefNum] => 
+            [transType] => AC
+            [cardBrand] => 
+            [customerRefNum] => 
+            [profileOrderOverideInd] => 
+            [useCustomerRefNum] => 
+            [orbitalConnectionUsername] => COUCODEINT1208
+            [orbitalConnectionPassword] => NJ9Y9YTZRW4TGP
+            [version] => 2.6
+            [merchantID] => 700000004575
+            [bin] => 000002
+            [industryType] => EC
+            [terminalID] => 001
+            [error] => 
+            [customerName] => Testy Testerson
+        )
+
+)
+---------------------------------------
+--------------Response -----------------
+Gorilla_Paymentech_Model_Source_NewOrderResponseElement Object
+(
+    [procStatus] => 0
+    [approvalStatus] => 0
+    [respCode] => 04
+    [authorizationCode] => 
+    [procStatusMessage] => Pickup
+    [hostRespCode] => 04
+    [hostAVSRespCode] => Y
+    [hostCVVRespCode] => S
+    [retryTrace] => 
+    [retryAttempCount] => 
+    [lastRetryDate] => 
+    [customerName] => 
+    [profileProcStatus] => 
+    [profileProcStatusMsg] => 
+    [requestedAmount] => 
+    [redeemedAmount] => 
+    [ccAccountNum] => 
+    [ccExp] => 
+    [ccCardVerifyPresenceInd] => 
+    [ccCardVerifyNum] => 
+    [addProfileFromOrder] => 
+    [amount] => 
+    [shippingRef] => 
+    [orderID] => zWeT45FP
+    [comments] => 
+    [avsZip] => 
+    [avsAddress1] => 
+    [avsAddress2] => 
+    [avsCity] => 
+    [avsState] => 
+    [avsName] => 
+    [avsCountryCode] => 
+    [avsPhone] => 
+    [txRefNum] => 4F843FC5FE2A150B5CBC4B4484EB542358F95451
+    [transType] => AC
+    [cardBrand] => DI
+    [customerRefNum] => 
+    [profileOrderOverideInd] => 
+    [useCustomerRefNum] => 
+    [orbitalConnectionUsername] => 
+    [orbitalConnectionPassword] => 
+    [version] => 
+    [merchantID] => 700000004575
+    [bin] => 000002
+    [industryType] => EC
+    [terminalID] => 001
+    [error] => 
+    [txRefIdx] => 0
+    [respDateTime] => 20120410101221
+    [avsRespCode] => F 
+    [cvvRespCode] => S
+    [mcRecurringAdvCode] => 
+    [visaVbVRespCode] => 
+    [respCodeMessage] => HOLD - CALL                     03003
+)
+-----------------------------------------
+
+
+
+
+
+
+

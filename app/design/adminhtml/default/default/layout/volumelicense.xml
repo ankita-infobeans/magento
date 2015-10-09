@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <adminhtml_volumelicense_index>
+	<reference name="content">
+	  <block type="volumelicense/adminhtml_volumelicense"  name="volumelicense" />
+	</reference>
+  </adminhtml_volumelicense_index>
+  <adminhtml_registry_index>
+	<reference name="content">
+	  <block type="volumelicense/adminhtml_registry"  name="volumelicense" />
+	</reference>
+  </adminhtml_registry_index>
+    <adminhtml_volumelicense_reports>
+	<reference name="content">
+	  <block type="volumelicense/adminhtml_reports"  name="volumelicense" />
+	</reference>
+  </adminhtml_volumelicense_reports>
+   <adminhtml_volumelicense_gift>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="volumelicense/adminhtml_customer_edit_tab_gift_grid" name="gift.grid"/>
+        </block>
+    </adminhtml_volumelicense_gift>
+    <adminhtml_volumelicense_purchase>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="volumelicense/adminhtml_customer_edit_tab_purchase_grid" name="purchase.grid"/>
+        </block>
+    </adminhtml_volumelicense_purchase>
+</layout>

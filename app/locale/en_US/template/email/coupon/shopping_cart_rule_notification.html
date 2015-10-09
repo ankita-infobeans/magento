@@ -1,0 +1,36 @@
+<!--@subject Shopping Cart Price Rule Expiration Notification ! @-->
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+  <table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+    <tr>
+      <td align="center" valign="top">
+        <!-- [ header starts here] -->
+          <table cellspacing="0" cellpadding="0" border="0" width="650">
+            <tr>
+              <td valign="top">
+		       {{block id='transactional_email_header'}}
+		 </td>
+            </tr>
+          </table>
+          <!-- [ middle starts here] -->
+          <table cellspacing="0" cellpadding="0" border="0" width="650">
+            <tr>
+              <td valign="top">
+                <p>
+                <strong>Dear Admin</strong>,<br/>
+		</p>
+		<p>You are receiving this email regarding a scheduled coupon expired alert for rule name that have been expired in this quarter. Here, are the list of rule name(s) with their available coupon count as on {{var date}} </p>
+                <p>
+                {{var rule_name}}
+                </p>
+<p></p>
+              </td>
+            </tr>
+ <tr>
+                        <td>Thank You, </td></tr>
+ <tr><td>ICC</td></tr>
+                    </tr>
+          </table>
+      </td>
+    </tr>
+  </table>
+</div>

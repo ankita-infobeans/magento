@@ -1,0 +1,4 @@
+<?php
+class Gorilla_Paymentech_Model_Source_ProfileChangeRequestElement extends Gorilla_Paymentech_Model_Source_DefaultElement {
+
+}

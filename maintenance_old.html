@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Maintenance Notice</title>
+
+<style>
+
+@charset "utf-8";
+
+
+
+* { margin: 0; }
+
+
+
+html, body { height: 100%; }
+
+body, button { font-family: Arial,Helvetica,sans-serif; color:#444545;  font-size:14px; line-height: 1.5em; }
+
+
+
+#container { width: 100%; height: auto; overflow: hidden; }
+
+#content { margin: auto; background-color: #fff; overflow: hidden; }
+
+
+
+h1 { margin: 36px 0 12px; font-size:18px; font-weight:700; line-height: 1.3em; }
+
+
+
+p { color:#666666; padding-bottom: 5px; }
+
+.copy { position: fixed; bottom: 0; padding: 5px; font-size: 10px; line-height: 1.2em; width: 100%; background-color: #fff; }
+
+
+
+a { color: #444545; }
+
+a:hover { text-decoration: none; }
+
+a:focus { outline: medium none; }
+
+a:hover, a:active { outline: 0 none; }
+
+a:active, a:hover { text-decoration: none; }
+
+
+
+.logo { padding-right: 10px; width: 200px; height: inherit; }
+
+
+
+button { background-color: #48a24b; border: 0 none; border-radius: 0; color: #fff; font-weight: 700; margin-top: 10px; padding: 10px 20px 11px; vertical-align: bottom; }
+
+
+
+button:hover { background-color: #444445; }
+
+
+
+button:active { background-color: #55d737; }
+
+
+
+a.button { text-decoration: none; }
+
+
+
+@media only screen and (min-width: 601px) and (max-width: 3000px) {
+
+	body { background: #fff url("src/bg.png") no-repeat scroll 0 0; }
+
+	#content { width: 540px; padding: 10px; margin-top: 10%; }
+
+	.logo { float: left; }
+
+}
+
+
+
+@media only screen and (min-width: 486px) and (max-width: 600px) {
+
+	body { background: #fff url("src/bg.png") no-repeat scroll 0 0; }
+
+	#content { width: 90%; padding: 10px; margin-top: 10%; }
+
+	.logo { float: left; }
+
+}
+
+
+
+@media only screen and (max-width: 485px) {
+
+	body {  background: #fff none repeat scroll 0 0; }
+
+	#content { width: 90%; }
+
+	.logo { width: 250px; height: inherit; margin: 10px auto 0; }
+
+	.copy{ position:inherit; margin-top:20px;}
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<div id="container">
+
+<div id="content">
+
+<div class="logo"><img src="src/ICClogo-vert.jpg" alt="International Code Council Logo" class="logo"></div>
+
+<h1>Temporarily Down for Maintenance</h1>
+
+<p>This site is currently undergoing scheduled maintenance.  We 
+
+apologize for the inconvenience.  Please check back after sometime for an 
+
+improved user experience.</p>
+
+<button onclick="goBack()">Return to previous page</button>
+
+</div>
+
+
+
+<p class="copy">© 2015 International Code Council, Inc. All rights reserved.</p>
+
+</div>
+
+
+
+ 
+
+<script>
+
+function goBack() {
+
+    window.history.back();
+
+}
+
+</script>
+
+
+
+
+
+</body></html>

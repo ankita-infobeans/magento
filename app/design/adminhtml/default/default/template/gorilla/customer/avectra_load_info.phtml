@@ -1,0 +1,122 @@
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>prototype/event.simulate.js"></script>
+<script type="text/javascript">
+<?php $customer = Mage::registry('current_customer'); ?>
+
+    document.observe('dom:loaded', function(){
+        var user_info = new Array();
+        var action = "<?php echo ($customer->getId())? 'update' : 'create'; ?>";
+        var a = new Element('a', {href: '#'}).update('Load info from Avectra');
+        var parent_el = $('_accountemail').parentNode;
+        var url = '<?php echo Mage::getUrl("avectra/ajax/index", array("_secure" => true)) ?>';
+        a.setStyle({'display': 'inline'});
+        a.addClassName('load_customer_info');
+        parent_el.setStyle({'width': '410px'});
+        parent_el.insert(a);
+        parent_el.on('click', '.load_customer_info', function(){
+            var customer_email = $('_accountemail').value.trim();
+            if(!customer_email.empty()){
+                new Ajax.Request(url,
+                    {
+                        method: 'post',
+                        parameters: {'customer_email': customer_email},
+                        onSuccess: function(data){
+                            user_info = data.responseText.evalJSON();
+                            if(user_info.response){
+                                var proceed = true;
+                                var msg = 'User found\nFirst Name: ' + user_info.firstname
+                                        + '\nLast Name: ' + user_info.lastname
+                                        + '\nOrg Name: ' + user_info.orgname;
+                                if(action == 'create'){
+                                    
+                                    $('_accountfirstname').value = user_info.firstname;
+                                    $('_accountlastname').value = user_info.lastname;
+                                    $('_accountpassword').value = user_info.password;
+                                    $('_accountwebsite_id').options[2].selected = true;
+                                    if(user_info.customer_exists){
+                                        proceed = false;
+                                        msg += '\n\nUser already exists';
+                                    } else {
+                                        msg += '\n\nDo you want create new User?';
+                                    }
+                                } else {
+                                    msg += '\n\nDo you want update the user?';
+                                }
+                                var input_email_avectra_key = new Element('input', {'type': 'hidden', 'name': 'account[email_avectra_key]', value: user_info.emailavectrakey, 'id': '_accountemailavectrakey'});
+                                var input_avectra_key = new Element('input', {'type': 'hidden', 'name': 'account[avectra_key]', value: user_info.avectrakey, 'id': '_accountavectrakey'});
+                                $('edit_form').insert(input_avectra_key);
+                                $('edit_form').insert(input_email_avectra_key);
+                                if(proceed){
+                                    if(confirm(msg)){
+                                        document.fire('create:user');
+                                    }
+                                } else {
+                                    alert(msg);
+                                }
+                            }  else {
+                                if(action == 'create'){
+                                    $('_accountfirstname').clear();
+                                    $('_accountlastname').clear();
+                                    $('_accountpassword').clear();
+
+                                }
+                                if($('_accountavectrakey') != undefined){
+                                    $('_accountavectrakey').remove();
+                                }
+                                if($('_accountemailavectrakey') != undefined){
+                                    $('_accountemailavectrakey').remove();
+                                }
+                                alert('User Not Found.');
+                            }
+                        },
+                        onFailure: function(){
+                            alert('Something wrong. Fail Request.');
+                        }
+                    });
+            }
+        });
+
+        document.observe('create:user', function()
+        {
+            var avectra_key = $('_accountavectrakey').value;
+            createUser(avectra_key, action);
+        });
+    });
+
+    function createUser(avectra_key, action)
+    {
+        var url = '<?php echo Mage::getUrl("avectra/ajax/accountCustomer", array("_secure" => true)) ?>';
+        new Ajax.Request(url, {
+            method: 'post',
+            parameters: {'avectra_key': avectra_key, 'action': action},
+            onSuccess: function (data)
+            {
+                var customer = data.responseText.evalJSON();
+
+                if(customer.success){
+                    alert('User was successfully ' + action + 'd.');
+                    if(action == 'update'){
+                        window.location = "<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/customer/edit/', array('id'=> $customer->getId())) ?>";
+                    } else {
+                        $$('button.back').each(function(el){el.simulate('click')});
+                    }
+                } else{
+                    alert('User was not ' + action + 'd.');
+                }
+            },
+            onFailure: function ()
+            {
+                alert('Error! User was not ' + action + 'd.');
+            }
+        });
+    }
+
+    function eventFire(el, etype){
+        if (el.fireEvent) {
+            (el.fireEvent('on' + etype));
+        } else {
+            var evObj = document.createEvent('Events');
+            evObj.initEvent(etype, true, false);
+            el.dispatchEvent(evObj);
+        }
+    }
+</script>

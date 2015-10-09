@@ -1,0 +1,67 @@
+<?php
+    $quoteItems = $this->getQuote()->getAllVisibleItems();
+    $coreHelper = $this->helper('core');
+?>
+
+<?php
+    foreach ($quoteItems as $_item){
+        
+//        $_product = $_item->getProduct();
+//        Mage::log($_product->debug());
+        $_product = Mage::getModel('catalog/product')
+                ->setStoreId($_item->getQuote()->getStoreId())
+                ->load($_item->getProductId());
+        
+        $discountPrice = $this->getDiscountPrice($_item->getPrice());
+        $showDiscount = $_item->getPrice() != $discountPrice && $this->showDiscount();
+?>
+    <table class="product" cellpadding="0" cellspacing="0">
+                                    <tr>
+					<?php if ($this->showImage()) {?>
+                                         <td class="product-image" valign=top style="padding: 20px 10px 20px 20px; width: 100px; height: 100px; font-family: 'Myriad Pro', 'Verdana', Geneva;">
+                                            <a href="<?php echo $this->getProductUrl($_product) ?>">
+						<img class="product-image-image bord_color" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" alt="" width="100" height="100" style="border: 1px solid #FFA453"/>
+					    </a>
+                                        </td> 
+                                        <?php }?>
+                                        <td class="product-text" style="padding: 20px 20px 20px 10px;">
+                                          <table class="product-text">
+                                              <tr class="name font_16" style="font-size: 16pt; font-weight: 600;color:black; font-family: 'Myriad Pro', 'Verdana', Geneva;"><td>
+                                                    <a style="color: black;" href="<?php echo $this->getProductUrl($_product) ?>" ><?php echo $this->escapeHtml($_product->getName()) ?></a>   
+                                              </td></tr>
+                                              
+                                              <tr class="description font_12" style="font-size: 12pt; font-family: 'Myriad Pro', 'Verdana', Geneva;"><td style="font-family: 'Myriad Pro', 'Verdana', Geneva;">
+                                                  <?php echo $_product->getDescription() ?>
+                                              </td></tr>
+                                              
+                                              <tr class="product-price" style="font-size: 18pt; color: #FFA453; font-family: 'Myriad Pro', 'Verdana', Geneva;"><td>
+                                                      <p><?php 
+                print $this->__('Price:') ;
+                print "&nbsp;";
+                print $coreHelper->currency($_item->getPrice(), true, false);
+                if ($_item->getQty() > 1){
+                    print '&nbsp;x&nbsp;'.$_item->getQty();
+                }
+            ?>
+           
+            <?php if ($showDiscount) {
+                    print "<br/>";
+                    print $this->__('Discount Price:') ;
+                    print "&nbsp;";
+                    print $coreHelper->currency($discountPrice, true, false);
+                    if ($_item->getQty() > 1){
+                        print '&nbsp;x&nbsp;'.$_item->getQty();
+                    }
+                
+                }
+            ?>
+            </p>    
+                                              </td></tr>
+                                          </table> 
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="border: 0; border-top: 1px dashed #FFA453; margin: 0;" />
+ <?php }?>
+ 
+

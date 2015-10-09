@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://schemas.datacontract.org/2004/07/ICC.GP.MagentoIntegrationService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://tempuri.org/">
+	<SOAP-ENV:Body>
+		<ns2:CreateNewOrder>
+			<ns2:NewOrder>
+				<ns1:BatchNumber>WEB_2012_07_12</ns1:BatchNumber>
+				<ns1:BillToAddress>
+					<ns1:City>Hueytown</ns1:City>
+					<ns1:ContactName>Ann Mcdonald</ns1:ContactName>
+					<ns1:Country>United States</ns1:Country>
+					<ns1:CountryCode>US</ns1:CountryCode>
+					<ns1:Line1>106 Holly St</ns1:Line1>
+					<ns1:Line2></ns1:Line2>
+					<ns1:Line3></ns1:Line3>
+					<ns1:Phone1>2055911853</ns1:Phone1>
+					<ns1:ShipToCompany xsi:nil="true"/>
+					<ns1:State>AL</ns1:State>
+					<ns1:UPSZone>USC</ns1:UPSZone>
+					<ns1:Zip>35023</ns1:Zip>
+				</ns1:BillToAddress>
+				<ns1:CCAuthorizationNumber>098514</ns1:CCAuthorizationNumber>
+				<ns1:CCCardHolderName>Ann Mcdonald</ns1:CCCardHolderName>
+				<ns1:CCExpirationDate>0712</ns1:CCExpirationDate>
+				<ns1:CCName>VISA</ns1:CCName>
+				<ns1:CCNumber>1000692888291</ns1:CCNumber>
+				<ns1:CustomerEmail>amcdonald@gmail.com</ns1:CustomerEmail>
+				<ns1:CustomerId>8165584</ns1:CustomerId>
+				<ns1:CustomerName>Ann Mcdonald</ns1:CustomerName>
+				<ns1:CustomerPhone>2055911853</ns1:CustomerPhone>
+				<ns1:CustomerRefNumber></ns1:CustomerRefNumber>
+				<ns1:Error></ns1:Error>
+				<ns1:FreightAmount>0.0000</ns1:FreightAmount>
+				<ns1:INDNumber>8165584</ns1:INDNumber>
+				<ns1:MemberFlag>false</ns1:MemberFlag>
+				<ns1:ORGNumber xsi:nil="true"/>
+				<ns1:OrderComment></ns1:OrderComment>
+				<ns1:OrderDate>2012-07-19T00:00:00</ns1:OrderDate>
+				<ns1:OrderDetails>
+					<ns1:OrderLine>
+						<ns1:ExtendedPrice>100</ns1:ExtendedPrice>
+						<ns1:ItemNumber>2942M1</ns1:ItemNumber>
+						<ns1:ItemPrice>100.0000</ns1:ItemPrice>
+						<ns1:OrderDate>2012-07-12T00:00:00</ns1:OrderDate>
+						<ns1:PromotionAmount>0</ns1:PromotionAmount>
+						<ns1:Quantity>1.0000</ns1:Quantity>
+						<ns1:ShipToAddress>
+							<ns1:City>Hueytown</ns1:City>
+							<ns1:ContactName>Ann Mcdonald</ns1:ContactName>
+							<ns1:Country>United States</ns1:Country>
+							<ns1:CountryCode>US</ns1:CountryCode>
+							<ns1:Line1>106 Holly St</ns1:Line1>
+							<ns1:Line2></ns1:Line2>
+							<ns1:Line3></ns1:Line3>
+							<ns1:Phone1>2055911853</ns1:Phone1>
+							<ns1:ShipToCompany xsi:nil="true"/>
+							<ns1:State>AL</ns1:State>
+							<ns1:UPSZone>USC</ns1:UPSZone>
+							<ns1:Zip>35023</ns1:Zip>
+						</ns1:ShipToAddress>
+						<ns1:ShippingMethod>FEDEX</ns1:ShippingMethod>
+						<ns1:TaxLineAmount>0.0000</ns1:TaxLineAmount>
+						<ns1:TaxLines>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>-9</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>ALSLJEFFERS001</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>1</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>ALSNJEFFERS001</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>4</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>ALSSALABAMA001</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>4</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>ALSTHUEYTOW001</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+						</ns1:TaxLines>
+					</ns1:OrderLine>
+					<ns1:OrderLine>
+						<ns1:ExtendedPrice>0</ns1:ExtendedPrice>
+						<ns1:ItemNumber>5525L10</ns1:ItemNumber>
+						<ns1:ItemPrice>0.0000</ns1:ItemPrice>
+						<ns1:OrderDate>2012-07-12T00:00:00</ns1:OrderDate>
+						<ns1:PromotionAmount>0</ns1:PromotionAmount>
+						<ns1:Quantity>1.0000</ns1:Quantity>
+						<ns1:ShipToAddress>
+							<ns1:City>Hueytown</ns1:City>
+							<ns1:ContactName>Ann Mcdonald</ns1:ContactName>
+							<ns1:Country>United States</ns1:Country>
+							<ns1:CountryCode>US</ns1:CountryCode>
+							<ns1:Line1>106 Holly St</ns1:Line1>
+							<ns1:Line2></ns1:Line2>
+							<ns1:Line3></ns1:Line3>
+							<ns1:Phone1>2055911853</ns1:Phone1>
+							<ns1:ShipToCompany xsi:nil="true"/>
+							<ns1:State>AL</ns1:State>
+							<ns1:UPSZone>USC</ns1:UPSZone>
+							<ns1:Zip>35023</ns1:Zip>
+						</ns1:ShipToAddress>
+						<ns1:ShippingMethod>FEDEX</ns1:ShippingMethod>
+						<ns1:TaxLineAmount>0.0000</ns1:TaxLineAmount>
+						<ns1:TaxLines>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>0</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>FOREIGN</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>0</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>FOREIGN</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>0</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>FOREIGN</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>0</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>FOREIGN</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+						</ns1:TaxLines>
+					</ns1:OrderLine>
+					<ns1:OrderLine>
+						<ns1:ExtendedPrice>125</ns1:ExtendedPrice>
+						<ns1:ItemNumber>8710PCA10</ns1:ItemNumber>
+						<ns1:ItemPrice>125.0000</ns1:ItemPrice>
+						<ns1:OrderDate>2012-07-12T00:00:00</ns1:OrderDate>
+						<ns1:PromotionAmount>0</ns1:PromotionAmount>
+						<ns1:Quantity>1.0000</ns1:Quantity>
+						<ns1:ShipToAddress>
+							<ns1:City>Hueytown</ns1:City>
+							<ns1:ContactName>Ann Mcdonald</ns1:ContactName>
+							<ns1:Country>United States</ns1:Country>
+							<ns1:CountryCode>US</ns1:CountryCode>
+							<ns1:Line1>106 Holly St</ns1:Line1>
+							<ns1:Line2></ns1:Line2>
+							<ns1:Line3></ns1:Line3>
+							<ns1:Phone1>2055911853</ns1:Phone1>
+							<ns1:ShipToCompany xsi:nil="true"/>
+							<ns1:State>AL</ns1:State>
+							<ns1:UPSZone>USC</ns1:UPSZone>
+							<ns1:Zip>35023</ns1:Zip>
+						</ns1:ShipToAddress>
+						<ns1:ShippingMethod>FEDEX</ns1:ShippingMethod>
+						<ns1:TaxLineAmount>12.5000</ns1:TaxLineAmount>
+						<ns1:TaxLines>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>1.25</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>ALSLJEFFERS001</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>1.25</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>ALSNJEFFERS001</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>5</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>ALSSALABAMA001</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+							<ns1:OrderLineTaxes>
+								<ns1:TaxAmount>5</ns1:TaxAmount>
+								<ns1:TaxScheduleDetail>ALSTHUEYTOW001</ns1:TaxScheduleDetail>
+							</ns1:OrderLineTaxes>
+						</ns1:TaxLines>
+					</ns1:OrderLine>
+				</ns1:OrderDetails>
+				<ns1:OrderNumber>100069288</ns1:OrderNumber>
+				<ns1:OrderPromotionAmount>0</ns1:OrderPromotionAmount>
+				<ns1:OrderPromotionID></ns1:OrderPromotionID>
+				<ns1:OrderTotal>237.5000</ns1:OrderTotal>
+				<ns1:PaymentAmount>237.5000</ns1:PaymentAmount>
+				<ns1:ShipToAddress>
+					<ns1:City>Hueytown</ns1:City>
+					<ns1:ContactName>Ann Mcdonald</ns1:ContactName>
+					<ns1:Country>United States</ns1:Country>
+					<ns1:CountryCode>US</ns1:CountryCode>
+					<ns1:Line1>106 Holly St</ns1:Line1>
+					<ns1:Line2></ns1:Line2>
+					<ns1:Line3></ns1:Line3>
+					<ns1:Phone1>2055911853</ns1:Phone1>
+					<ns1:ShipToCompany xsi:nil="true"/>
+					<ns1:State>AL</ns1:State>
+					<ns1:UPSZone>USC</ns1:UPSZone>
+					<ns1:Zip>35023</ns1:Zip>
+				</ns1:ShipToAddress>
+				<ns1:ShippingMethod>FEDEX</ns1:ShippingMethod>
+				<ns1:SubTotal>225</ns1:SubTotal>
+				<ns1:TaxSchedule>35023  AI</ns1:TaxSchedule>
+				<ns1:TaxTotal>12.5000</ns1:TaxTotal>
+				<ns1:TrxRefNum>4FFEBCA7550B717D5056B5AD41F67C4ACF75539A</ns1:TrxRefNum>
+			</ns2:NewOrder>
+		</ns2:CreateNewOrder>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

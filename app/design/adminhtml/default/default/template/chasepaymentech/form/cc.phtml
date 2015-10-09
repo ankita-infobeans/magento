@@ -1,0 +1,96 @@
+<?php $_code = $this->getMethodCode() ?>
+<ul id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <input type="hidden" name="payment[<?php echo $_code ?>_card]" value="NEWCARD" id="cc_enter_new_card" class="no-display" />
+    <li id="<?php echo $_code ?>_cc_new_card_form" style="margin: 10px 0 15px 25px;">
+        <ul>
+            <li>
+                <label for="<?php echo $_code ?>_cc_type"><?php echo $this->__('Credit Card Type') ?><em class="required">*</em></label>
+                <div class="input-box">
+                    <select id="<?php echo $_code ?>_cc_type" name="payment[cc_type]" class="required-entry validate-cc-type-select">
+                        <option value=""><?php echo $this->__('--Please Select--')?></option>
+                        <?php $_ccType = $this->getInfoData('cc_type') ?>
+                        <?php foreach ($this->getCcAvailableTypes() as $_typeCode => $_typeName): ?>
+                        <option value="<?php echo $_typeCode ?>"<?php if($_typeCode==$_ccType): ?> selected="selected"<?php endif ?>><?php echo $_typeName ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <label for="<?php echo $_code ?>_cc_number"><?php echo $this->__('Credit Card Number') ?><em class="required">*</em></label>
+                <div class="input-box">
+                    <input type="text" id="<?php echo $_code ?>_cc_number" name="payment[cc_number]" title="<?php echo $this->__('Credit Card Number') ?>" class="input-text validate-cc-duplicate validate-cc-number validate-cc-type" value="" />
+                </div>
+            </li>
+            <li id="<?php echo $_code ?>_cc_type_exp_div">
+                <div class="input-box">
+                    <label for="<?php echo $_code ?>_expiration"><?php echo $this->__('Expiration Date') ?><em class="required">*</em></label>
+                    <br />
+                    <select id="<?php echo $_code ?>_expiration" name="payment[cc_exp_month]" class="month validate-cc-exp required-entry">
+                        <?php $_ccExpMonth = $this->getInfoData('cc_exp_month') ?>
+                        <?php foreach ($this->getCcMonths() as $k=>$v): ?>
+                        <option value="<?php echo $k?$k:'' ?>"<?php if($k==$_ccExpMonth): ?> selected="selected"<?php endif ?>><?php echo $v ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <?php $_ccExpYear = $this->getInfoData('cc_exp_year') ?>
+                    <select id="<?php echo $_code ?>_expiration_yr" name="payment[cc_exp_year]" class="year required-entry">
+                        <?php foreach ($this->getCcYears() as $k=>$v): ?>
+                        <option value="<?php echo $k?$k:'' ?>"<?php if($k==$_ccExpYear): ?> selected="selected"<?php endif ?>><?php echo $v ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+            </li>
+            <li id="<?php echo $_code ?>_cc_type_cvv_div">
+                <label for="<?php echo $_code ?>_cc_cid"><?php echo $this->__('Card Verification Number') ?><em class="required">*</em></label>
+                <div class="input-box">
+                    <div class="v-fix">
+                        <input type="text" style="width:3em;" title="<?php echo $this->__('Card Verification Number') ?>" class="input-text cvv required-entry validate-cc-cvn" id="<?php echo $_code ?>_cc_cid" name="payment[cc_cid]" value="" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+
+<script type="text/javascript">
+    $$('#<?php echo $_code ?>_cc_saved_cards input').each(function(element){
+        Event.observe(element, 'click', function(event){
+            var cimNewCardForm = $("<?php echo $_code ?>_cc_new_card_form");
+            if(element.value.length == 0){
+                cimNewCardForm.show();
+                cimNewCardForm.select('input','select','textarea').each(function(elm){
+                    elm.disabled = false;
+                });
+            } else {
+                cimNewCardForm.hide();
+                $("<?php echo $_code ?>_cc_new_card_form").select('input','select','textarea').each(function(elm){
+                    elm.disabled = true;
+                });
+            }
+        });
+    });
+
+    Array.prototype.contains = function(obj) {
+        var i = this.length;
+        while (i--) {
+            if (this[i] === obj) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Add a Rule for Validating against duplicates
+    Validation.addAllThese([
+        ['validate-cc-duplicate', 'The customer already has this card on file, please select this existing card or enter a new one.', function(v, elm) {
+        <?php if (!empty($lastFourList)) : ?>
+            var lastFours = ["<?php echo implode('","', $lastFourList); ?>"];
+            var currentLastFour = v.slice(v.length-4,v.length); //get the last four chars of THIS cc
+            if (lastFours.contains(currentLastFour)) {
+                return false;
+            }
+            <?php endif; // Just return true if we don't have stored CCs ?>
+            return true;
+        }]
+    ]);
+</script>

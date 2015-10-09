@@ -1,0 +1,13 @@
+<?php
+    $mode = $this->getMode();
+    switch ($mode){
+        case "list":
+        case "table":
+            print $this->getChildHtml($mode);
+            break;
+        default:
+            print "unhandled template";
+            break;
+    }
+    
+?>

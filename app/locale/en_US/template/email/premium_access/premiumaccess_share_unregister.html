@@ -1,0 +1,46 @@
+<!--@subject Assigned premiumACCESS Product Reminder  @-->
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+  <table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+    <tr>
+      <td align="center" valign="top">
+        <!-- [ header starts here] -->
+          <table cellspacing="0" cellpadding="0" border="0" width="650">
+            <tr>
+              <td valign="top">
+                <p>
+                  <a href="{{store url=""}}" style="color:#1E7EC8;"><img src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="Magento" border="0"/></a>
+                </p>
+              </td>
+            </tr>
+          </table>
+          <!-- [ middle starts here] -->
+          <table cellspacing="0" cellpadding="0" border="0" width="650">
+            <tr>
+              <td valign="top">
+              	          <!-- [ middle starts here] -->
+		  <table cellspacing="0" cellpadding="0" border="0" width="650">
+		  <tr>
+		    <td valign="top">
+		      <p>
+		      <strong>Dear User</strong>,<br/>
+		      {{var customer_name}} has assigned you a premiumACCESS  "{{var product_name}}" on {{var purchased_date}}.
+		      </p>
+		      <p>
+			  To view your purchase please <a href="{{var myecode_url}}">click here </a>
+		      </p>
+                      <p>
+                        If you no longer wish to receive this reminder notification for order #{{var order_id}}, Please <a href="{{store url=""}}optremainder/index/index/options/{{var url_options}}">click here</a>
+                      </p>
+		      <p>
+			  Thank You,
+		      </p>
+		    </td>
+		  </tr>
+	    </table>
+              </td>
+            </tr>
+          </table>
+      </td>
+    </tr>
+  </table>
+</div>

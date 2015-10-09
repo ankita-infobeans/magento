@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Inferno
+ * @package     Inferno_Core
+ * @license     https://mageinferno.com/eula/
+-->
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/inferno/core.css</stylesheet></action>
+        </reference>
+    </default>
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+<!-- greatplains_adminhtml_greatplainsbackend_index>
+			<reference name="content">
+				<block type="greatplains/adminhtml_greatplainsbackend" name="greatplainsbackend" template="greatplains/greatplainsbackend.phtml"/>
+			</reference>
+		</greatplains_adminhtml_greatplainsbackend_index>
+		<greatplains_adminhtml_modelname_index>
+				<reference name="content">
+					    <block type="greatplains/adminhtml_modelname" name="modelname" />
+				</reference>
+		</greatplains_adminhtml_modelname_index -->
+</layout>

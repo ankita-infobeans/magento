@@ -1,0 +1,166 @@
+<?php
+/**
+ * @copyright   Copyright (c) 2009-2012 Amasty (http://www.amasty.com)
+ */ 
+class Amasty_Acart_Model_Rule extends Mage_Rule_Model_Rule
+{
+    const CANCEL_RULE_BOUGHT = 'bought';
+    const CANCEL_RULE_LINK = 'link';
+    
+    const COUPON_CODE_BY_PERCENT = 'by_percent';
+    const COUPON_CODE_BY_FIXED = 'by_fixed';
+    const COUPON_CODE_CART_FIXED = 'cart_fixed';
+    
+    public function _construct()
+    {
+        parent::_construct();
+        $this->_init('amacart/rule');
+    }
+    
+    public function getConditionsInstance()
+    {
+        return Mage::getModel('amacart/rule_condition_combine');
+    }
+    
+    protected function _toSeconds($days, $hours, $minutes){
+        return $minutes * 60 + ($hours * 60 * 60) + ($days * 24 * 60 * 60);
+    }
+    
+    protected function _afterSave()
+    {
+        if (is_array($this->getSchedule())){
+            
+            $scheduleCollection = Mage::getModel('amacart/schedule')->getCollection();
+            $scheduleCollection->addFilter('rule_id', $this->getId());
+            
+            $scheduleDbData = $scheduleCollection->getItems();
+            
+            $schedule = $this->getSchedule();
+            $saveData = array();
+            
+            foreach($schedule['email_templates'] as $order => $email_template_id){
+                
+                if ($order > 0) { //skip first template row
+                    
+                    $days = intval($schedule['days'][$order]);
+                    $hours = intval($schedule['hours'][$order]);
+                    $minutes = intval($schedule['minutes'][$order]);
+                    
+                    $coupon_type = $schedule['coupon_type'][$order];
+                    $discount_amount = intval($schedule['discount_amount'][$order]);
+                    
+                    $expired_in_days = intval($schedule['expired_in_days'][$order]);
+                    $subtotal_greater_than = $schedule['subtotal_greater_than'][$order];
+//                    var_dump($subtotal_greater_than);
+//                    exit(1);
+                    $delayed_start = $this->_toSeconds($days, $hours, $minutes);
+                    $saveData[$this->_toSeconds($days, $hours, $minutes)] = array(
+                        'delayed_start' => $delayed_start,
+                        'email_template_id' => empty($email_template_id) ? NULL : $email_template_id,
+                        'coupon_type' => empty($coupon_type) ? NULL : $coupon_type,
+                        'discount_amount' => $discount_amount,
+                        'expired_in_days' => $expired_in_days,
+                        'subtotal_greater_than' => empty($subtotal_greater_than) ? NULL : $subtotal_greater_than,
+                    );
+                        
+                }
+            }
+            
+            foreach($scheduleDbData as $scheduleDbItem){
+                $delayed_start = $scheduleDbItem->getDelayedStart();
+                
+                if (array_key_exists($delayed_start, $saveData)){
+                    
+//                    $scheduleDbItem->setEmailTemplateId($saveData[$delayed_start]);
+                    $scheduleDbItem->addData($saveData[$delayed_start]);
+                    
+                    $scheduleDbItem->save();
+                    unset($saveData[$delayed_start]);
+                } else {
+                    $scheduleDbItem->delete();
+                }
+                
+            }
+            
+            foreach($saveData as $delayed_start => $config){
+                
+                $schedule = Mage::getModel('amacart/schedule');
+                $schedule->setData(array_merge(array(
+                    'rule_id' => $this->getId(),
+                    'email_template_id' => $email_template_id
+                ), $config));
+                
+                $schedule->save();
+            }
+        }
+        
+        //Saving attributes used in rule
+        $ruleProductAttributes = array_merge(
+            $this->_getUsedAttributes($this->getConditionsSerialized()),
+            $this->_getUsedAttributes($this->getActionsSerialized())
+        );
+        if (count($ruleProductAttributes)) {
+            $this->getResource()->saveAttributes($this->getId(), $ruleProductAttributes);
+        } 
+        
+        return parent::_afterSave(); 
+    } 
+    
+    /**
+     * Return all product attributes used on serialized action or condition
+     *
+     * @param string $serializedString
+     * @return array
+     */
+    protected function _getUsedAttributes($serializedString)
+    {
+        $result = array();
+        
+        $pattern = '~s:32:"salesrule/rule_condition_product";s:9:"attribute";s:\d+:"(.*?)"~s';
+        $matches = array();
+        if (preg_match_all($pattern, $serializedString, $matches)){
+            foreach ($matches[1] as $attributeCode) {
+                $result[] = $attributeCode;
+            }
+        }
+        
+        return $result;
+    }  
+    
+    public function validate(Varien_Object $quote){
+        $storesIds = $this->getStores();
+        
+        $arrStores = explode(',', $storesIds);
+                
+        $storesValidation = empty($storesIds) || in_array($quote->getStoreId(), $arrStores);
+        
+        $customerGroupsIds = $this->getCustGroups();
+        $arrCustomerGroups = explode(',', $customerGroupsIds);
+        
+        $customerGroupValidation = empty($customerGroupsIds) || in_array($quote->getCustomerGroupId(), $arrCustomerGroups);
+        
+        return $storesValidation && $customerGroupValidation && $this->_validateAddress($quote);
+    }
+    
+    protected function _validateAddress($quote){
+        $ret = false;
+        
+        foreach($quote->getAllAddresses() as $address){
+            $this->_initAddress($address, $quote);
+        
+            if (parent::validate($address)){
+                $ret = true;
+                break;
+    }
+        }
+        return $ret;
+    }
+    
+    protected function _initAddress($address, $quote){
+    
+        $address->setData('total_qty', $quote->getData('items_qty'));
+        return $address;
+    }
+    
+    
+}

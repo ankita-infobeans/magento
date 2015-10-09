@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+ * @category    Inferno
+ * @package     Inferno_UspsAV
+ * @license     https://mageinferno.com/eula/
+-->
+<layout>
+    <adminhtml_sales_order_create_index>
+        <reference name="shipping_address">
+            <action method="setTemplate">
+                <template>inferno/uspsav/sales/order/create/form/address.phtml</template>
+            </action>
+        </reference>
+        <reference name="billing_address">
+            <action method="setTemplate">
+                <template>inferno/uspsav/sales/order/create/form/address.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_sales_order_create_index>
+    <adminhtml_sales_order_create_load_block_data>
+        <reference name="shipping_address">
+            <action method="setTemplate">
+                <template>inferno/uspsav/sales/order/create/form/address.phtml</template>
+            </action>
+        </reference>
+        <reference name="billing_address">
+            <action method="setTemplate">
+                <template>inferno/uspsav/sales/order/create/form/address.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_sales_order_create_load_block_data>
+    <adminhtml_sales_order_create_load_block_shipping_address>
+        <reference name="shipping_address">
+            <action method="setTemplate">
+                <template>inferno/uspsav/sales/order/create/form/address.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_sales_order_create_load_block_shipping_address>
+    <adminhtml_sales_order_create_load_block_billing_address>
+        <reference name="billing_address">
+            <action method="setTemplate">
+                <template>inferno/uspsav/sales/order/create/form/address.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_sales_order_create_load_block_billing_address>
+</layout>

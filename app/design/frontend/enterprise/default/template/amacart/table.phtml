@@ -1,0 +1,63 @@
+<?php
+    $quoteItems = $this->getQuote()->getAllVisibleItems();
+    $coreHelper = $this->helper('core');
+?>
+
+<?php $l = count($quoteItems); ?>
+<div style="border:1px solid #E0E0E0; padding:15px; background:#F9F9F9;">
+<table cellspacing="0" cellpadding="0" border="0" width="650">
+    <tr>
+    <?php $i = 0; foreach ($quoteItems as $_item): $i++ ?>
+        <?php
+        
+            $_product = $_item->getProduct();
+        
+            $discountPrice = $this->getDiscountPrice($_item->getPrice());
+            $showDiscount = $_item->getPrice() != $discountPrice && $this->showDiscount();
+            
+        ?>
+        
+        <td width="32%">
+            <?php if ($this->showImage()) {?>
+            <p align="center" style="font-size:12px;"><a href="<?php echo $this->getProductUrl($_product) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" style="border:1px solid #ccc;" width="135" height="135" alt="" /></a></p>
+            <?php }?>
+            <p align="center" style="font-size:12px;"><a href="<?php echo $this->getProductUrl($_product) ?>" style="color:#203548;"><strong><?php echo $this->escapeHtml($_product->getName()) ?></strong></a></p>
+            <?php if ($this->showPrice()) {?>
+            <p align="center" style="font-size:12px; <?php print $showDiscount ? "text-decoration: line-through;" : "";?>"><?php 
+                print $this->__('Price:') ;
+                print "&nbsp;";
+                print $coreHelper->currency($_item->getPrice(), true, false);
+                if ($_item->getQty() > 1){
+                    print '&nbsp;x&nbsp;'.$_item->getQty();
+                }
+            ?></p>
+            <?php }?>
+            <?php if ($showDiscount) {?>
+            <p align="center" style="font-size:12px;">
+                
+                <p align="center" style="font-size:12px;"><?php 
+                    print $this->__('Discount Price:') ;
+                    print "&nbsp;";
+                    print $coreHelper->currency($discountPrice, true, false);
+                    if ($_item->getQty() > 1){
+                        print '&nbsp;x&nbsp;'.$_item->getQty();
+                    }
+                ?></p>
+            </p>
+            
+            <?php }?>
+        </td>
+        <?php if ($i%3!=0): ?>
+            <td width="2%"></td>
+        <?php else: ?>
+           </tr>
+            <tr>
+                <td colspan="5">&nbsp;</td>
+            </tr>
+            <?php if ($i<$l): ?>
+               <tr>
+            <?php endif ?>
+        <?php endif ?>
+    <?php endforeach ?>
+</table>
+</div>

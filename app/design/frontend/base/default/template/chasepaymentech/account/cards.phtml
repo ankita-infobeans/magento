@@ -1,0 +1,47 @@
+<div class="page-title">
+    <h1><?php echo $this->__('My Credit Cards'); ?></h1>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="my-account-cards-view">
+	<div>
+		<?php if ($cards = $this->getCards()) : ?>
+		<table class="data-table" id="my-cards-table">
+			<col width="1" />
+			<col width="1" />
+			<col width="1" />
+			<col width="1" />
+			<thead>
+				<tr>
+					<th><?php echo $this->__('Card #') ?></th>
+					<th><?php echo $this->__('Expiration') ?></th>
+					<th><?php echo $this->__('Bill To') ?></th>
+					<th><?php echo $this->__('Action') ?></th>
+				</tr>
+			</thead>
+			<tbody>
+            <?php $_odd = ''; ?>
+            <?php foreach ($cards as $_card) : ?>
+				<tr>
+					<td><?php echo "###########" . substr($_card->getCcNumber(), -4) ?></td>
+					<td><?php echo $_card->getCcExpiry(); ?></td>
+					<td><?php echo $_card->getCustomerName(); ?></td>
+					<td class="nobr last">
+						<span class="nobr">
+	                        <?php /** <a href="<?php echo $this->getEditUrl($_card) ?>"><?php echo $this->__('Edit'); ?></a>
+                            &nbsp;<span class="separator">|</span>&nbsp; */ ?>
+							<a href="<?php echo $this->getDeleteUrl($_card) ?>" class="link-reorder"><?php echo $this->__('Delete'); ?></a>
+						</span>
+					</td>
+				</tr>
+            <?php endforeach; ?>
+			</tbody>
+		</table>
+		<?php else: ?>
+		    <p><?php echo $this->__('You have no credit cards on file.'); ?></p>
+		<?php endif ;?>
+	</div>
+	<script type="text/javascript">decorateTable('my-cards-table');</script>
+	<div class="buttons-set">
+	    <button class="button button-long" onclick="window.location = '<?php echo $this->helper('chasepaymentech')->getCustomerAddCreditCardUrl(); ?>'"><span><span><?php echo $this->__('Add a Credit Card') ?></span></span></button>
+	</div>
+</div>
